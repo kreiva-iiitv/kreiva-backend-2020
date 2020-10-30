@@ -1,0 +1,3 @@
+media/rules/*
+media/submissions/*
+*.env
