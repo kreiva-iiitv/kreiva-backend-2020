@@ -47,6 +47,18 @@ $ python manage.py runserver
 ```
 Open a browser tab and write http://localhost:8000/ to see the website.
 
+## APIs available
+
+1) /team/ - Organising team names
+2) /team_member/ - Organising team members
+3) /event/ - Event details in the fest
+4) /event_member/ - Event organising member details
+5) /user/ - Get users who have logged in 
+6) /participant/ - Get participants who have registered for the fest
+7) /google/ - Use oauth2 token to get details of users who sign in
+8) /team_sub/ - Get team event submission details
+9) /photo_sub/ - Get submission details of Individual events having photos
+10) /video_sub/ - Get submission details of Individual events having video
 
 If you'd like to contribute, just make an issue and start working on it!
 
