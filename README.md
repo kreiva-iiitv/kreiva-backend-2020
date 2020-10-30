@@ -40,6 +40,11 @@ $ pip install -r requirements.txt
 ```
 
 To run the app, follow these steps
+Make a .env file at the root of your project directory. Generate a secret key and add the following to the file
+
+SECRET_KEY=A_RANDOM_SECRET_KEY
+
+Replace this A_RANDOM_SECRET_KEY with your own secret key. Now run the following commands
 
 ```sh
 $ python manage.py makemigrations && python manage.py migrate
