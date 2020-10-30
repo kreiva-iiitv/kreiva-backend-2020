@@ -8,10 +8,12 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email',)
+        fields = ('first_name', 'last_name', 'email',)
 
 
 class ParticipantSerializer(serializers.ModelSerializer):
+
+    user =UserSerializer(read_only=True)
 
     class Meta:
 

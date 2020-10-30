@@ -1,9 +1,13 @@
 from rest_framework import serializers
 from submissions.models import *
+from participant.serializers import ParticipantSerializer
+from events.serializers import EventSerializer
 
 
 class TeamSubmissionSerializer(serializers.ModelSerializer):
 
+    #participant = ParticipantSerializer(read_only=True)
+    #event = EventSerializer(read_only=True)
     class Meta:
 
         model = TeamSubmission
@@ -12,15 +16,18 @@ class TeamSubmissionSerializer(serializers.ModelSerializer):
 
 class IndividialPhotoSubmissionSerializer(serializers.ModelSerializer):
 
-    #team = serializers.ReadOnlyField(source='Team')
+    #participant = ParticipantSerializer(read_only=True)
+    #event = EventSerializer(read_only=True)
     class Meta:
 
         model = IndividialPhotoSubmission
-        fields = '__all__'
+        fields = ('participant', 'event', 'photo')
 
 
 class IndividialVideoSubmissionSerializer(serializers.ModelSerializer):
 
+    #participant = ParticipantSerializer(read_only=True)
+    #event = EventSerializer(read_only=True)
     class Meta:
 
         model = IndividialVideoSubmission

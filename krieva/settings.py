@@ -124,8 +124,6 @@ USE_L10N = True
 USE_TZ = True
 
 PHONENUMBER_DB_FORMAT = 'INTERNATIONAL'
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
 
@@ -134,14 +132,10 @@ MEDIA_URL = '/media/'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-    "krieva.iiitvadodara.ac.in"
-]
-'''
+CORS_ORIGIN_ALLOW_ALL = True
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
-'''
