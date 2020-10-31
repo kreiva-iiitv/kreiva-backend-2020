@@ -138,3 +138,4 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
