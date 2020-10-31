@@ -84,7 +84,7 @@ tzlocal==2.1
 unicodecsv==0.14.1
 urllib3==1.25.9
 Werkzeug==1.0.1
-whitenoise==5.0.1
+whitenoise==5.2.0
 wincertstore==0.2
 wrapt==1.12.1
 zipp==3.1.0
