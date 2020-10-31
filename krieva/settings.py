@@ -14,7 +14,7 @@ from pathlib import Path
 from decouple import config
 import django_heroku
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 
 SECRET_KEY = config('SECRET_KEY')
