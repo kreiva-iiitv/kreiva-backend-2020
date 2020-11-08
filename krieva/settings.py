@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 from decouple import config
 import django_heroku
+import dj_database_url
 
 
 
@@ -97,7 +98,7 @@ if DEBUG:
 
 else:
     DATABASES = {
-        'default': dj_database_url.config(conn_max_age=2000)
+        'default': dj_database_url.config(default=config('DATABASE_URL'))
         
     }
 
