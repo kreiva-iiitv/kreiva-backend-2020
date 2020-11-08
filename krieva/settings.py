@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import django_heroku
+
 
 
 SECRET_KEY = config('SECRET_KEY')
@@ -149,3 +151,5 @@ REST_FRAMEWORK = {
     ],
 }
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
