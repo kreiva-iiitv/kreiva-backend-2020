@@ -10,9 +10,9 @@ class Team(models.Model):
 
         return self.name
 
-class Member(models.Model):
+class TeamMember(models.Model):
 
-    ROLE_CHOICES = [('Convener', 'Convener'), ('Co-convener', 'Co-convener'), ('Member', 'Member')]
+    ROLE_CHOICES = [('Lead', 'Lead'), ('Co-Lead', 'Co-Lead'), ('Member', 'Member')]
 
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50, null=True)

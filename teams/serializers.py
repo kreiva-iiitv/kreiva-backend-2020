@@ -10,11 +10,9 @@ class TeamSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class MemberSerializer(serializers.ModelSerializer):
-
-    team =TeamSerializer(read_only=True)
+class TeamMemberSerializer(serializers.ModelSerializer):
 
     class Meta:
 
-        model = Member
+        model = TeamMember
         fields = '__all__'

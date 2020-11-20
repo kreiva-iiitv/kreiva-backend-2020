@@ -14,6 +14,6 @@ class TeamViewSet(viewsets.ModelViewSet):
     serializer_class = TeamSerializer
 
 
-class MemberViewSet(viewsets.ModelViewSet):
-    queryset = Member.objects.all()
-    serializer_class = MemberSerializer
+class TeamMemberViewSet(viewsets.ModelViewSet):
+    queryset = TeamMember.objects.all()
+    serializer_class = TeamMemberSerializer

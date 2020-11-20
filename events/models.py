@@ -19,10 +19,12 @@ class Event(models.Model):
 
 class Member(models.Model):
 
+    ROLE_CHOICES = [('Convener', 'Convener'), ('Co-convener', 'Co-convener'), ('Member', 'Member')]
+
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    role = models.CharField(max_length=10)
+    role = models.CharField(max_length=100, choices = ROLE_CHOICES)
     phone = models.CharField(blank=True, max_length=20)
 
     def __str__(self):
