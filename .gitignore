@@ -1,3 +1,4 @@
 .env
 media/*
-.dbsqlite3
+db.sqlite3
+.vscode
