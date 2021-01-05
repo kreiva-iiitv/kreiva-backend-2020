@@ -11,6 +11,5 @@ urlpatterns = [
     path('', include('teams.urls')),
     path('', include('events.urls')),
     path('', include('participant.urls')),
-    path('', include('submissions.urls')),
-
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

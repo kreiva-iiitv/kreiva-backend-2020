@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'teams',
     'participant',
     'phonenumber_field',
-    'submissions',
     'corsheaders',
 
 ]
