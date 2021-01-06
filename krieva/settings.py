@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if config('DEBUG')=="True" else False
 
-ALLOWED_HOSTS = ['kreiva.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['kreiva.herokuapp.com', 'localhost', 'gaurkrishna.pythonanywhere.com']
 
 
 # Application definition
