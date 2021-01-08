@@ -12,7 +12,7 @@ class Team(models.Model):
 
 class TeamMember(models.Model):
 
-    ROLE_CHOICES = [('Lead', 'Lead'), ('Co-Lead', 'Co-Lead'), ('Member', 'Member')]
+    ROLE_CHOICES = [('Lead', 'Lead'), ('Co-Lead', 'Co-Lead'), ('Member', 'Member'), ('Coordinator', 'Coordinator')]
 
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50, null=True)
