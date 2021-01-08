@@ -5,8 +5,6 @@ This project is the backend for Kreiva 2020. It will provide APIs for every thin
 
 # Features!
 
-  - Google oauth2 for every participant
-  - Submissions for every event
   - APIs to call for different organising teams for the event
 
 ## Tech
@@ -58,12 +56,6 @@ Open a browser tab and write http://localhost:8000/ to see the website.
 2) /team_member/ - Organising team members
 3) /event/ - Event details in the fest
 4) /event_member/ - Event organising member details
-5) /user/ - Get users who have logged in 
-6) /participant/ - Get participants who have registered for the fest
-7) /google/ - Use oauth2 token to get details of users who sign in
-8) /team_sub/ - Get team event submission details
-9) /photo_sub/ - Get submission details of Individual events having photos
-10) /video_sub/ - Get submission details of Individual events having video
 
 If you'd like to contribute, just make an issue and start working on it!
 
