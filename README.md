@@ -57,6 +57,8 @@ Open a browser tab and write http://localhost:8000/ to see the website.
 3) /event/ - Event details in the fest
 4) /event_member/ - Event organising member details
 
+Open a browser tab and write https://gaurKrishna.pythonanywhere.com/ to see the website.
+
 If you'd like to contribute, just make an issue and start working on it!
 
 Contributors - [Tanmay Ambadkar](https://github.com/TanmayAmbadkar), [Yash Shah](https://github.com/theyashshahs)
