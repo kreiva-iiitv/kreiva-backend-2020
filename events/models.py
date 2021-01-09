@@ -13,6 +13,8 @@ class Event(models.Model):
     end_time = models.DateTimeField(blank=True)
     rules_doc = models.FileField(upload_to='rules/', blank=True)
     instagram = models.URLField(max_length = 200, blank=True)
+    facebook = models.URLField(max_length=200, blank=True)
+    email = models.URLField(max_length=200, blank=True)
     google_form_link = models.URLField(max_length=200, blank=True)
 
     def __str__(self):
