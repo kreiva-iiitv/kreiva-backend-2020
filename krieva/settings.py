@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'events',
     'teams',
-    'participant',
     'phonenumber_field',
     'corsheaders',
 
