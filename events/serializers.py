@@ -11,16 +11,7 @@ class MemberSerializer(serializers.ModelSerializer):
 
 class EventSerializer(serializers.ModelSerializer):
 
-    eventmember = MemberSerializer(many=True) 
-
     class Meta:
 
         model = Event
         fields = '__all__'
-
-    def create(self, validated_data):
-        eventmemberValidated = validated_data.pop('eventmember')
-        event = Event.objects.create(**validated_data)
-        for member in eventmemberValidated:
-            Member.objects.create(event=event, **member)
-        return event 
