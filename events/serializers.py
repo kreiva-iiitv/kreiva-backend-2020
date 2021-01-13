@@ -1,4 +1,3 @@
-import re
 from rest_framework import serializers
 from events.models import *
 
