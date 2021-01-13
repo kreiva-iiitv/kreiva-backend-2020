@@ -8,7 +8,7 @@ class Event(models.Model):
     short_description = models.CharField(max_length=200, blank=True)
     long_description = models.TextField(blank=True)
     prize = models.IntegerField(blank=True)
-    team_size = models.IntegerField(blank=True)
+    venue = models.CharField(max_length=255, blank=True)
     start_time = models.DateTimeField(blank=True)
     end_time = models.DateTimeField(blank=True)
     rules_doc = models.FileField(upload_to='rules/', blank=True)
@@ -25,7 +25,7 @@ class Member(models.Model):
 
     ROLE_CHOICES = [('Convener', 'Convener'), ('Co-convener', 'Co-convener'), ('Member', 'Member')]
 
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='eventmember')
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     role = models.CharField(max_length=100, choices = ROLE_CHOICES)
