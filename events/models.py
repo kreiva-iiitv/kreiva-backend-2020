@@ -23,9 +23,9 @@ class Event(models.Model):
 
 class Member(models.Model):
 
-    ROLE_CHOICES = [('Convener', 'Convener'), ('Co-convener', 'Co-convener'), ('Member', 'Member')]
+    ROLE_CHOICES = [('Convener', 'Convener'), ('Co-convener', 'Co-convener'), ('Committee-Coordinator', 'Committee-Coordinator')]
 
-    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='eventmember')
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     role = models.CharField(max_length=100, choices = ROLE_CHOICES)
