@@ -22,21 +22,27 @@ class EventViewSet(viewsets.ModelViewSet):
                 convenerData = MemberSerializer(convener)
                 convenerData = convenerData.data
             except Member.DoesNotExist as exp:
-                convenerData = {}
+                convener = Member(event=event, role='Convener')
+                convenerData = MemberSerializer(convener)
+                convenerData = convenerData.data
 
             try:
                 co_convener = Member.objects.get(event=event, role='Co-convener')
                 co_convenerData = MemberSerializer(co_convener)
                 co_convenerData = co_convenerData.data
             except Member.DoesNotExist as exp:
-                co_convenerData = {}
+                co_convener = Member(event=event, role='Co-convener')
+                co_convenerData = MemberSerializer(co_convener)
+                co_convenerData = co_convenerData.data
             
             try:
                 member = Member.objects.get(event=event, role='Member')
                 memberData = MemberSerializer(member)
                 memberData = memberData.data
             except Member.DoesNotExist as exp:
-                memberData = {}
+                member = Member(event=event, role='Member')
+                memberData = MemberSerializer(member)
+                memberData = memberData.data
         
             responseData['Convener'] = convenerData
             responseData['Co-Convener'] = co_convenerData
