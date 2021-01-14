@@ -20,11 +20,12 @@ class TeamViewSet(viewsets.ModelViewSet):
             resppnseData = {}
             resppnseData.update(teamData.data)
 
-            member = TeamMember.objects.filter(team=team).order_by('-rolepriority')
-            if len(member) == 0:
-                member = TeamMember(team=team)
-            memberData = TeamMemberSerializer(member, many=True)
-            resppnseData['teamMembers'] = memberData.data
+            MemberDatas = []
+            members = TeamMember.objects.filter(team=team).order_by('-rolepriority')
+            for member in members:
+                memberData = TeamMemberSerializer(member)
+                MemberDatas.append(memberData.data)
+            resppnseData['teamMembers'] = MemberDatas
             teams.append(resppnseData)
         return Response({'Team': teams}, status=status.HTTP_200_OK)            
 
