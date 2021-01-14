@@ -14,7 +14,7 @@ class EventViewSet(viewsets.ModelViewSet):
     def list(self, request):
         events = []
         for event in self.queryset:
-            eventData = self.serializer_class(event)
+            eventData = self.get_serializer(event)
             responseData = {}
             responseData.update(eventData.data)
             try:
