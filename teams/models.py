@@ -18,6 +18,7 @@ class TeamMember(models.Model):
     first_name = models.CharField(max_length=50, null=True)
     last_name = models.CharField(max_length=50, null=True)
     role = models.CharField(max_length=100, blank=False)
+    rolepriority = models.IntegerField(blank=True, default=1)
     profilepic = models.ImageField(upload_to='team-profilepics', blank=True)
     github = models.URLField(max_length=1000, blank=True)
     linkedIn = models.URLField(max_length=1000, blank=True)
