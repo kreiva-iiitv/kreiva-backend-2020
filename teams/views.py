@@ -21,7 +21,7 @@ class TeamViewSet(viewsets.ModelViewSet):
             resppnseData.update(teamData.data)
 
             MemberDatas = []
-            members = TeamMember.objects.filter(team=team).order_by('-rolepriority')
+            members = TeamMember.objects.filter(team=team).order_by('rolepriority')
             for member in members:
                 memberData = TeamMemberSerializer(member)
                 MemberDatas.append(memberData.data)
