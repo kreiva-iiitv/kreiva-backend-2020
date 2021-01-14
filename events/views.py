@@ -36,17 +36,17 @@ class EventViewSet(viewsets.ModelViewSet):
                 co_convenerData = co_convenerData.data
             
             try:
-                member = Member.objects.get(event=event, role='Member')
-                memberData = MemberSerializer(member)
-                memberData = memberData.data
+                committee_coordinator = Member.objects.get(event=event, role='Committee-Coordinator')
+                committee_coordinatorData = MemberSerializer(committee_coordinator)
+                committee_coordinatorData = committee_coordinatorData.data
             except Member.DoesNotExist as exp:
-                member = Member(event=event, role='Member')
-                memberData = MemberSerializer(member)
-                memberData = memberData.data
+                committee_coordinator = Member(event=event, role='Committee-Coordinator')
+                committee_coordinatorData = MemberSerializer(committee_coordinator)
+                committee_coordinatorData = committee_coordinatorData.data
         
             responseData['Convener'] = convenerData
             responseData['Co-Convener'] = co_convenerData
-            responseData['Member'] = memberData
+            responseData['Committee-Coordinator'] = committee_coordinatorData
             events.append(responseData)
         return Response({'Events': events}, status=status.HTTP_200_OK)
 
