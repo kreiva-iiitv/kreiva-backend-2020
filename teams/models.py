@@ -21,3 +21,6 @@ class TeamMember(models.Model):
     profilepic = models.ImageField(upload_to='team-profilepics', blank=True)
     github = models.URLField(max_length=1000, blank=True)
     linkedIn = models.URLField(max_length=1000, blank=True)
+
+    def __str__(self):
+        return f'{self.team}: {self.first_name} {self.role}'
