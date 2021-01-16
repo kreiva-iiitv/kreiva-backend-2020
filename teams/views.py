@@ -11,24 +11,11 @@ from rest_framework import viewsets, status
 
 class TeamViewSet(viewsets.ModelViewSet):
     queryset = Team.objects.all()
-    serializer_class = TeamSerializer
+    serializer_class = TeamSerializer      
 
     def list(self, request):
-        teams = []
-        for team in self.queryset:
-            teamData = self.get_serializer(team)
-            resppnseData = {}
-            resppnseData.update(teamData.data)
-
-            MemberDatas = []
-            members = TeamMember.objects.filter(team=team).order_by('-rolepriority')
-            for member in members:
-                memberData = TeamMemberSerializer(member)
-                MemberDatas.append(memberData.data)
-            resppnseData['teamMembers'] = MemberDatas
-            teams.append(resppnseData)
-        return Response({'Team': teams}, status=status.HTTP_200_OK)            
-
+        teams = self.get_serializer(self.queryset, many=True)
+        return Response({'Team': teams.data}, status=status.HTTP_200_OK)
 
 
 class TeamMemberViewSet(viewsets.ModelViewSet):
