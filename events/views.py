@@ -45,8 +45,8 @@ class EventViewSet(viewsets.ModelViewSet):
                 committee_coordinatorData = committee_coordinatorData.data
         
             responseData['Convener'] = convenerData
-            responseData['Co-Convener'] = co_convenerData
-            responseData['Committee-Coordinator'] = committee_coordinatorData
+            responseData['coConvener'] = co_convenerData
+            responseData['committeeCoordinator'] = committee_coordinatorData
             events.append(responseData)
         return Response({'Events': events}, status=status.HTTP_200_OK)
 
