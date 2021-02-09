@@ -5,12 +5,12 @@ from events.models import *
 from events.serializers import *
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-
+from rest_framework.views import APIView
 
 class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-
+    http_method_names = ['get',]
     def list(self, request):
         events = []
         for event in self.queryset:
@@ -53,5 +53,24 @@ class EventViewSet(viewsets.ModelViewSet):
 class MemberViewSet(viewsets.ModelViewSet):
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
-
+    http_method_names = ['get',]
 # Create your views here.
+
+class LampStatus(APIView):
+
+    def get(self, request):
+        f = open("/home/ubuntu/kreiva-backend-2020/status.txt", "r")
+        x = int(f.read())
+        f.close()
+        return Response({'out':x}, status=status.HTTP_200_OK)
+
+class LampStatusPost(APIView):
+
+    def get(self, request):
+        x = request.GET.get('status')
+        if x is None:
+            x=0
+        f = open("/home/ubuntu/kreiva-backend-2020/status.txt", "w")
+        f.write(f"{x}")
+        f.close()
+        return Response({'out':x})
